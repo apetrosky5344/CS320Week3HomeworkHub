@@ -1,0 +1,29 @@
+---
+- name: Week 2 homework
+  hosts: LinuxServer
+  gather_facts: true
+   
+  tasks:
+   - name: Hostname
+     ansible.builtin.debug:
+       var: ansible_hostname
+
+   - name: IP Address
+     ansible.builtin.debug:
+       var: ansible_default_ipv4.address
+      
+   - name: Major Linux Distribution Family
+     ansible.builtin.debug:
+       var: ansible_os_family
+
+   - name: DisK Size
+     ansible.builtin.debug:
+       var: ansible_mounts
+
+   - name: Ram/Memory Total
+     ansible.builtin.debug:
+       var: ansible_memtotal_mb
+      
+   - name: Number of Processor Cores
+     ansible.builtin.debug:
+       var: ansible_processor_cores
